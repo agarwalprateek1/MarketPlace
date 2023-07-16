@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "500385389069",
+    "project_id": "marketplace-bdfa6",
+    "storage_bucket": "marketplace-bdfa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500385389069:android:ab54143eed437d1e399344",
+        "android_client_info": {
+          "package_name": "com.example.marketplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500385389069-ek42d6g4genr6pl7ollipn1gfuva8ubl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUCXvBBl612dS-Dcpvss0ef1kYnATAm04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500385389069-ek42d6g4genr6pl7ollipn1gfuva8ubl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

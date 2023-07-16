@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="220dp"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:layout_weight="1"
+        android:id="@+id/prodImgView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Product Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/brandTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Brand"
+            android:textSize="17sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/mrpTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:text="MRP"
+            android:textSize="17sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/spTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="SP"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/categoryTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Category"
+            android:textSize="17sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+</LinearLayout>
