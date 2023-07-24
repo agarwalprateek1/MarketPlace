@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profileFragment">
+    android:orientation="vertical"
+    tools:context=".profileFragment"
+    android:background="#EBEDBE">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/_475324"/>
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/curr_name"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="15dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="profile fragment" />
+        android:textSize="21sp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_marginLeft="25dp"
+        android:id="@+id/curr_email"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:text="Email"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/address"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:hint="Shipping Address:"
+            android:textSize="19sp"
+            android:layout_height="match_parent"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/update_address"
+        android:layout_gravity="center"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="UPDATE ADDRESS"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOG OUT"
+        android:background="@drawable/custom_button1"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/del"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DELETE ACCOUNT"
+        android:background="@drawable/custom_button1"
+        android:textSize="20sp"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

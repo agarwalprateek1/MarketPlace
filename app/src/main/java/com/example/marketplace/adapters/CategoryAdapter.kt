@@ -1,10 +1,12 @@
 package com.example.marketplace.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.marketplace.ProductDisplayActivity
 import com.example.marketplace.classes.Categories
 import com.example.marketplace.databinding.CategoryItemBinding
 
@@ -21,6 +23,12 @@ class CategoryAdapter(val context: Context, val list:ArrayList<Categories>):Recy
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(context).load(list[position].Image).into(holder.binding.categoryImgView)
         holder.binding.categoryTextView.text = list[position].Name
+        holder.itemView.setOnClickListener {
+            val i= Intent(context, ProductDisplayActivity::class.java)
+            i.putExtra("choice",2)
+            i.putExtra("name",list[position].Name)
+            context.startActivity(i)
+        }
     }
 
 }

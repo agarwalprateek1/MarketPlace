@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBEDBE"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -21,7 +22,7 @@
         android:layout_height="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_menu"
-        app:backgroundColor="#14B3AE"
+        app:backgroundColor="#449A77"
         app:iconMargin="5dp"
         app:textSize="13sp"
         app:iconSize="26dp" />

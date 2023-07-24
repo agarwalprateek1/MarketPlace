@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketplace.adapters.BrandAdapter
 import com.example.marketplace.adapters.CategoryAdapter
@@ -23,26 +25,32 @@ class homeFragment : Fragment() {
     var brandList:ArrayList<Categories> = ArrayList()
     var categoryList:ArrayList<Categories> = ArrayList()
     var productList:ArrayList<Products> = ArrayList()
+    lateinit var proRecycler:RecyclerView
+    lateinit var catRecycler:RecyclerView
+    lateinit var brRecycler:RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home,container,false)
+        binding= FragmentHomeBinding.inflate(layoutInflater)
+        proRecycler = binding.productRecycler
+        catRecycler = binding.categoryRecycler
+        brRecycler = binding.brandRecycler
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val preferences = requireContext().getSharedPreferences("info",AppCompatActivity.MODE_PRIVATE)
+        if(preferences.getBoolean("cart_opener",false)){
+            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        }
         getCategories()
         getBrands()
         getProducts()
-        val brRecycler = view.findViewById<RecyclerView>(R.id.brandRecycler)
-        val catRecycler = view.findViewById<RecyclerView>(R.id.categoryRecycler)
-        val proRecycler = view.findViewById<RecyclerView>(R.id.productRecycler)
-        brRecycler.adapter = BrandAdapter(requireContext(),brandList)
-        catRecycler.adapter = CategoryAdapter(requireContext(),categoryList)
-        proRecycler.adapter = ProductAdapter(requireContext(),productList)
+
     }
     private fun getProducts() {
         Firebase.firestore.collection("Products").get().addOnSuccessListener {
@@ -50,8 +58,10 @@ class homeFragment : Fragment() {
             for(i in it.documents){
                 productList.add(i.toObject(Products::class.java)!!)
             }
+
+            proRecycler.adapter = ProductAdapter(requireContext(),productList)
         }.addOnFailureListener {
-            Toast.makeText(requireContext(),"Something went wrong",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Something went wrong.",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -61,8 +71,10 @@ class homeFragment : Fragment() {
             for(i in it.documents){
                 brandList.add(i.toObject(Categories::class.java)!!)
             }
+
+            brRecycler.adapter = BrandAdapter(requireContext(),brandList)
         }.addOnFailureListener {
-            Toast.makeText(requireContext(),"Something went wrong",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Something went wrong.",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -72,8 +84,10 @@ class homeFragment : Fragment() {
             for(i in it.documents){
                 categoryList.add(i.toObject(Categories::class.java)!!)
             }
+
+            catRecycler.adapter = CategoryAdapter(requireContext(),categoryList)
         }.addOnFailureListener {
-            Toast.makeText(requireContext(),"Something went wrong",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Something went wrong.",Toast.LENGTH_SHORT).show()
         }
     }
 }

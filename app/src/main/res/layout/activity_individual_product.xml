@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEDBE"
+    tools:context=".IndividualProductActivity">
+    <com.denzcoskun.imageslider.ImageSlider
+        android:layout_width="245dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="18dp"
+        android:id="@+id/slideshow"
+        app:iss_placeholder="@drawable/ic_launcher_foreground"
+        app:iss_period="1500"
+        app:iss_auto_cycle="true"
+        app:iss_delay="500" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="5dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv3"
+        android:textSize="15sp"
+        android:layout_margin="8dp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv4"
+        android:textSize="16sp"
+        android:layout_margin="8dp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv5"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#433F3F"
+        android:layout_margin="8dp"
+        android:layout_gravity="center_horizontal"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/addtocart"
+        android:layout_weight="1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD TO CART"
+        android:background="@drawable/custom_button"
+        android:textSize="17sp" />
+    <Button
+        android:id="@+id/gotocart"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO TO CART"
+        android:background="@drawable/custom_button"
+        android:textSize="17sp"/>
+    </LinearLayout>
+</LinearLayout>
